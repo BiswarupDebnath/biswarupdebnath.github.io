@@ -15,7 +15,7 @@
    $(window).load(function() {
 
       // will first fade out the loading animation 
-    	$("#loader").fadeOut("slow", function(){
+       $("#loader").fadeOut("slow", function(){
 
         // will fade out the whole DIV that covers the website.
         $("#preloader").delay(300).fadeOut("slow");
@@ -133,6 +133,8 @@
    	$.magnificPopup.close();
    });
 
+    
+
 	
 	/*-----------------------------------------------------*/
   	/* Navigation Menu
@@ -159,12 +161,13 @@
    	     
   	});
 
+    
 
    /*---------------------------------------------------- */
   	/* Highlight the current section in the navigation bar
   	------------------------------------------------------ */
 	var sections = $("section"),
-	navigation_links = $("#main-nav-wrap li a");	
+	navigation_links = $("#header-nav-wrap li a");	
 
 	sections.waypoint( {
 
@@ -176,7 +179,7 @@
 
 			if (direction === "up") active_section = active_section.prev();
 
-			var active_link = $('#main-nav-wrap a[href="#' + active_section.attr("id") + '"]');			
+			var active_link = $('#header-nav-wrap a[href="#' + active_section.attr("id") + '"]');			
 
          navigation_links.parent().removeClass("current");
 			active_link.parent().addClass("current");
@@ -185,6 +188,9 @@
 
 		offset: '25%'
 	});
+    
+    
+  
 
 
 	/*---------------------------------------------------- */
