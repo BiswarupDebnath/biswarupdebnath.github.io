@@ -82,7 +82,7 @@ body {
  * -------------------------------------------------------------------
  */
 a, a:visited {
-	color: #000000;
+	color: #0e00ce;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -1089,6 +1089,26 @@ header {
 	min-height: 66px;
 	z-index: 600;
 }
+
+.s-header {
+  position: fixed;
+  top: 2rem;
+  left: 0;
+  width: 100%;
+  height: 78px;
+  text-align: center;
+  z-index: 100;
+    
+}
+
+.s-header.sticky {
+  background-color: #050505;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
 header .row {
 	position: relative;
 	min-height: 66px;
@@ -1102,6 +1122,37 @@ header .top-bar {
 	left: 90px;
 	top: 0;
 }
+
+/* -------------------------------------------------------------------
+ * ## header logo
+ * ------------------------------------------------------------------- */
+.header-logo {
+  display: inline-block;
+  margin: 6px 0 0 0;
+  padding: 0;
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+  position: absolute;
+  top: 50%;
+  left: 40px;
+}
+
+.header-logo a {
+  display: block;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: none;
+  transition: all .3s;
+}
+
+.header-logo img {
+  width: 132px;
+  height: 36px;
+  margin: 0;
+}
+
+
 header .logo {
 	float: left;
 	margin-left: 20px;
@@ -1123,10 +1174,72 @@ header .logo a {
 	background-size: 92px 15px;
 }
 
+/* -------------------------------------------------------------------
+ * ## main navigation
+ * ------------------------------------------------------------------- */
+.header-nav-wrap {
+  display: inline-block;
+}
+
+
+.header-nav-wrap ul {
+  display: inline-block;
+  list-style: none;
+  margin-left: 0;
+  margin-top: 18px;
+}
+
+.header-nav-wrap li {
+  display: inline-block;
+  padding-left: 0;
+}
+
+.header-nav-wrap li a {
+  display: block;
+  line-height: calc(78px - (18px * 2));
+}
+
+.header-main-nav {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 0 4px;
+  z-index: 2;
+  position: static;
+}
+
+.header-main-nav li {
+  margin: 0 2rem;
+}
+
+.header-main-nav a {
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.header-main-nav a:hover,
+.header-main-nav a:focus,
+.header-main-nav a:active {
+  color: #ffffff;
+}
+
+.header-main-nav .current a {
+  color: #ffffff;
+}
+
+
+
+
+
+
 /**
  * menu toggle - (_layout.css)
  * ------------------------------------------------------------------- 
  */
+
+
 .menu-toggle {
 	float: left;
 	width: 40px;
@@ -1191,7 +1304,10 @@ header .logo a {
 	transition-property: bottom, transform;
 }
 
+
+
 /* is clicked */
+
 .menu-toggle.is-clicked span {
 	background-color: rgba(255, 0, 119, 0);
 }
@@ -1217,6 +1333,7 @@ header .logo a {
 }
 
 /* navigation panel */
+
 #main-nav-wrap {
 	display: block;
 	width: 100%;
@@ -1226,8 +1343,8 @@ header .logo a {
 	top: 100%;
 	left: 0;
 }
-
 /* dropdown nav */
+
 .main-navigation {
 	background: #000000;
 	padding: 24px 30px 42px;
@@ -1259,6 +1376,9 @@ header .logo a {
 	background: none;
 	color: #FF0077;
 }
+
+
+
 
 /**
  * responsive:
@@ -1300,7 +1420,7 @@ header .logo a {
 	background-size: cover;
 	background-attachment: fixed;
 	width: 100%;
-	height: 100%;
+	height: 100;
 	min-height: 720px;
 	display: table;
 	position: relative;
@@ -1491,17 +1611,19 @@ header .logo a {
  */
 #about {
 	background: #FFFFFF;
-	padding-top: 12rem;
+	padding-top: 8rem;
 	padding-bottom: 15rem;
 }
+
+
 #about .section-intro {
 	margin-bottom: 3rem;
 }
 
 .intro-info {
-	margin-top: 4.2rem;
-	margin-right: -30px;
-	margin-left: -30px;
+	margin-top: 1.2rem;
+	margin-right: -250px;  /* I changed the following from -30 */
+	margin-left: -250px;
 }
 .intro-info img {
 	height: 9rem;
@@ -1511,15 +1633,19 @@ header .logo a {
 	float: left;
 }
 .intro-info .lead {
-	text-align: left;
-	padding-left: 13rem;
+	text-align:justify;
+    text-align-last: left;
+	padding-left: 12rem;
+    color: 1f1f1f;
 }
 
 .about-content {
 	position: relative;
-	text-align: left;
+	text-align:justify;
+    text-align-last: left;
 	max-width: 850px;
 	margin-bottom: 3.6rem;
+    color: 1f1f1f;
 }
 .about-content h3 {
 	font-family: "poppins-bold", sans-serif;
